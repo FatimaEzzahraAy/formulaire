@@ -4,10 +4,12 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script defer src="javascp.js"></script>
       <title>Exercice3--Programmation W... </title>
 </head>
 <body>
-      <form action="" >
+      <h3 id="dat"></h3>
+      <form> 
             <fieldset>
                   <legend> <b>INSCRIPTION</b></legend>
              <table>
@@ -17,7 +19,10 @@
                               <span style="color:red ;">*</span>
                         </td>
                         <td>
-                              <input type="text" name="nom" required>
+                              <input type="text" id="nom">
+                        </td>
+                        <td id="validnom" style="display: none;">
+                             Entrez votre nom svp
                         </td>
                   </tr>
                   <tr>
@@ -26,17 +31,31 @@
                               <span style="color:red ;">*</span>
                         </td>
                         <td>
-                              <input type="text" name="prenom" required>
+                              <input type="text" id="prenom">
+                        </td>
+                        <td id="validprenom" >
                         </td>
                   </tr>
+                  <tr>
+                        <td>
+                              <label >Date de naissance</label>
+                              <span style="color:red ;">*</span>
+      
+                        </td>
+                        <td>
+                              <input type="date" id="age">
+                        </td>
+                        <td id="validdate"></td>
+                  </tr>  
             <tr>
                   <td>
                         <label for="codepostal">Code postal</label>
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="text" name="codepostal" required>
+                        <input type="text" id="cp">
                   </td>
+                  <td id="validcp"></td>
             </tr>
             <tr>
                   <td>
@@ -44,13 +63,15 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <select>
+                        <select id="pays">
                               <option>please selected...</option>
                               <option>Maroc</option>
                               <option>France</option>
                               <option>Egepte</option>
                               <option>Tunisie</option>
+                        </select>
                   </td>
+                  <td id="validp"></td>
             </tr>
             <tr>
                   <td>
@@ -58,9 +79,10 @@
                      <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="radio" name="genre" required>Masculin
-                        <input type="radio" name="genre" required>Féminin
+                        <input type="radio" name="genre" id="mas" >Masculin
+                        <input type="radio" name="genre" id="fem" >Féminin
                   </td>
+                  <td id="validg"></td>
             </tr>
             <tr>
                   <td>
@@ -68,19 +90,21 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="checkbox">Fax
-                        <input type="checkbox">Email
-                        <input type="checkbox">Telephone
+                        <input type="checkbox" id="fax">Fax
+                        <input type="checkbox" id="emai">Email
+                        <input type="checkbox" id="tel">Telephone
                   </td>
-            </tr>   
+                  <td id="choix"></td>
+            </tr> 
             <tr>
                   <td>
                         <label >Email</label>
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="text" name="email" required>
+                        <input type="text" id="email" >
                   </td>
+                  <td id="validem"></td>
             </tr>
             <tr>
                   <td>
@@ -88,7 +112,7 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="password" required>
+                        <input type="password" id="pass" >
                   </td>
             </tr>
             <tr>
@@ -97,18 +121,22 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="password" required>
+                        <input type="password" id="vp">
                   </td>
+                  <td id="password"></td>
             </tr>
             <tr>
                   <td></td>
                   <td>
-                      <input type="submit" value="Envoyer">
+                      <input type="button" value="Envoyer" onclick="valideT();">
                       <input type="reset" value="Effacer">
                   </td>
             </tr>
       </table>
       </fieldset>
       </form>
+
+  <!-- <p id="txt">Veuillez remplirrr toutes lesssss champssss</p>-->
+      
 </body>
 </html>
