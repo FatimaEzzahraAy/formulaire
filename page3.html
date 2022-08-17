@@ -19,7 +19,7 @@
                               <span style="color:red ;">*</span>
                         </td>
                         <td>
-                              <input type="text" id="nom">
+                              <input type="text" id="nom" onkeyup="validenom();">
                         </td>
                         <td id="validnom" style="display: none;">
                              Entrez votre nom svp
@@ -31,7 +31,7 @@
                               <span style="color:red ;">*</span>
                         </td>
                         <td>
-                              <input type="text" id="prenom">
+                              <input type="text" id="prenom" onkeyup="valideprenom();">
                         </td>
                         <td id="validprenom" >
                         </td>
@@ -43,7 +43,7 @@
       
                         </td>
                         <td>
-                              <input type="date" id="age">
+                              <input type="date" id="age" onchange="valideage();">
                         </td>
                         <td id="validdate"></td>
                   </tr>  
@@ -53,7 +53,7 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="text" id="cp">
+                        <input type="text" id="cp" onkeyup="validecp();">
                   </td>
                   <td id="validcp"></td>
             </tr>
@@ -63,7 +63,7 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <select id="pays">
+                        <select id="pays" onchange="validepays();">
                               <option>please selected...</option>
                               <option>Maroc</option>
                               <option>France</option>
@@ -90,9 +90,9 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="checkbox" id="fax">Fax
-                        <input type="checkbox" id="emai">Email
-                        <input type="checkbox" id="tel">Telephone
+                        <input type="checkbox" id="fax" name="con">Fax
+                        <input type="checkbox" id="emai" name="con">Email
+                        <input type="checkbox" id="tel" name="con">Telephone
                   </td>
                   <td id="choix"></td>
             </tr> 
@@ -102,7 +102,7 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="text" id="email" >
+                        <input type="text" id="email" onkeyup="valideemail();" >
                   </td>
                   <td id="validem"></td>
             </tr>
@@ -112,8 +112,9 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="password" id="pass" >
+                        <input type="password" id="pass" onkeyup="validepass();">
                   </td>
+                  <td id="validpass"></td>
             </tr>
             <tr>
                   <td>
@@ -121,15 +122,15 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="password" id="vp">
+                        <input type="password" id="vp" onkeyup="validepassword();">
                   </td>
-                  <td id="password"></td>
+                  <td id="validevp"></td>
             </tr>
             <tr>
                   <td></td>
                   <td>
                       <input type="button" value="Envoyer" onclick="valideT();">
-                      <input type="reset" value="Effacer">
+                      <input type="reset" value="Effacer" onclick="effacer();">
                   </td>
             </tr>
       </table>
