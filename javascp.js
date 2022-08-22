@@ -7,6 +7,7 @@
     validecp();
     valideage();
     valideemail();
+    validetelephone();
     validepays();
     validepass();
     validepassword();
@@ -58,11 +59,11 @@ function validecp(){
 //fonction pour verification de mot de passe:
 function validepass(){
     motp = document.getElementById("pass").value;
-    if (motp.length < 6 || motp.length > 8){
-        document.getElementById("validpass").innerHTML = "Entrez au minimal 6 caracteres et au maximal 8 caracteres";
+    if ( motp.length > 8){
+        document.getElementById("validpass").innerHTML = "Entrez au minimal 8 caracteres";
     }
     else {
-        document.getElementById("validpass").innerHTML = "mot de passe valider"
+        document.getElementById("validpass").innerHTML = "mot de passe valider";
     }
 }
 //fonction pour verification de (verifier le mot de passe ):
@@ -86,6 +87,17 @@ function valideemail(){
     }
     else{
         document.getElementById("validem").innerHTML = "valider";
+    }
+}
+function validetelephone(){
+    telp = document.getElementById("telph").value;
+    regtel = new RegExp('^[0-9]{10}$','i');
+    testetel = regtel.test(telp);
+    if(!testetel){
+        document.getElementById("validetel").innerHTML = "non valider";
+    }
+    else{
+        document.getElementById("validetel").innerHTML = "valider";
     }
 }
 //fonction pour pays::::
@@ -112,8 +124,21 @@ function validepcontrat(){
     email = document.getElementById("emai").checked;
     tel = document.getElementById("tel").checked;
     if (fax == true || email == true || tel == true){
-        document.getElementById("choix").innerHTML = "valider";
+        document.getElementById("choix").innerHTML = " valider";
     }else {
-        document.getElementById("choix").innerHTML = "non valider";
+        document.getElementById("choix").innerHTML = " non valider";
     } 
+}
+function effacer(){
+    document.getElementById("validnom").style.display="none";
+    document.getElementById("validprenom").innerHTML="";
+    document.getElementById("validdate").innerHTML="";
+    document.getElementById("validcp").innerHTML="";
+    document.getElementById("validpass").innerHTML="";
+    document.getElementById("validevp").innerHTML="";
+    document.getElementById("validem").innerHTML="";
+    document.getElementById("validp").innerHTML="";
+    document.getElementById("validg").innerHTML="";
+    document.getElementById("validetel").innerHTML ="";
+    document.getElementById("choix").innerHTML = "";
 }

@@ -5,6 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script defer src="javascp.js"></script>
+      <link rel="stylesheet" href="style.css">
       <title>Exercice3--Programmation W... </title>
 </head>
 <body>
@@ -79,8 +80,8 @@
                      <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="radio" name="genre" id="mas" >Masculin
-                        <input type="radio" name="genre" id="fem" >Féminin
+      <input type="radio" name="genre" id="mas" onclick="validegenre();">Masculin
+      <input type="radio" name="genre" id="fem" onclick="validegenre();">Féminin
                   </td>
                   <td id="validg"></td>
             </tr>
@@ -90,9 +91,9 @@
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
-                        <input type="checkbox" id="fax" name="con">Fax
-                        <input type="checkbox" id="emai" name="con">Email
-                        <input type="checkbox" id="tel" name="con">Telephone
+                        <input type="checkbox" id="fax" name="con" onchange="validepcontrat();">Fax
+                        <input type="checkbox" id="emai" name="con" onchange="validepcontrat();">Email
+                        <input type="checkbox" id="tel" name="con" onchange="validepcontrat();">Telephone
                   </td>
                   <td id="choix"></td>
             </tr> 
@@ -108,7 +109,17 @@
             </tr>
             <tr>
                   <td>
-                        <label>Password (6-8 caracters)</label>
+                        <label >Teléphone</label>
+                        <span style="color:red ;">*</span>
+                  </td>
+                  <td>
+                        <input type="text" id="telph" onkeyup="validetelephone();" >
+                  </td>
+                  <td id="validetel"></td>
+            </tr>
+            <tr>
+                  <td>
+                        <label>Password (Plus que 8 caracters)</label>
                         <span style="color:red ;">*</span>
                   </td>
                   <td>
@@ -129,15 +140,12 @@
             <tr>
                   <td></td>
                   <td>
-                      <input type="button" value="Envoyer" onclick="valideT();">
+                      <input type="button" value="Envoyer" onclick="valideT();" >
                       <input type="reset" value="Effacer" onclick="effacer();">
                   </td>
             </tr>
       </table>
       </fieldset>
-      </form>
-
-  <!-- <p id="txt">Veuillez remplirrr toutes lesssss champssss</p>-->
-      
+      </form>     
 </body>
 </html>
